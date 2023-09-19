@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This page is to add data</title>
+</head>
+<body>
+{% block body %}
+<h1>
+    Add your movies here...!!!
+</h1><br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter movie name"><br>
+    <input type="text" name="desc" placeholder="Enter movie description"><br>
+    <input type="text" name="year" placeholder="Year of release"><br>
+    <input type="file" name="img" placeholder="Chose your image"><br><br>
+
+
+    <input type="submit">
+
+{% endblock %}
+
+</body>
+</html>
+
+
+
+<!--refered from-->
+<!--    name=models.CharField(max_length=250)-->
+<!--    year=models.IntegerField()-->
+<!--    img=models.ImageField(upload_to='gallery')-->
